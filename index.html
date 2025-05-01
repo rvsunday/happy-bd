@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>สุขสันต์วันเกิดมุ้จุ้ 💖</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(#ffe0f0, #fff0c0);
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: inline-block;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff5e99;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: #ff80bf;
+      border: none;
+      border-radius: 1rem;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff5e99;
+    }
+
+    .hidden-section {
+      display: none;
+      margin-top: 1.5rem;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mujoo-pic {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 1rem;
+      margin: 1rem auto;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+    }
+
+    .qr {
+      width: 150px;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>สุขสันต์วันเกิดมุ้จุ้ 🎂</h1>
+  <p>ขอให้คุณมีความสุขที่สุดในโลกเลยน้า</p>
+  
+  <audio id="birthdaySong" src="assets/birthday1.mp3" autoplay loop ></audio>
+
+  <button class="btn" onclick="playSong()">เล่นเพลง 🎶</button>
+  <button class="btn" onclick="revealGift()">เปิดของขวัญ 💌</button>
+
+  <!-- ซ่อนข้อความ + รูป + QR -->
+  <div id="giftSection" class="hidden-section">
+    <p>ถึงมุ้จุ้ที่น่ารักที่สุดในโลก  
+    ขอให้ปีนี้เป็นปีที่ดี ได้หัวเราะเยอะ ๆ  
+    มีแต่คนเข้าใจและรักในแบบที่คุณเป็นเสมอ</p>
+    <p>จากซันซัง 🖤</p>
+
+    <div class = "image-slider">
+    <img src="assets/mujuu.jpg" alt="mujoo" class="mujoo-pic">
+    <img src="assets/mujuu1.jpg" alt="mujoo" class="mujoo-pic">
+    
+    </div>
+
+    <p class="qr-text">สแกน QR นี้เพื่อเปิดเพลย์ลิสต์ที่เราตั้งใจเลือกให้นะ ♫</p>
+    <img src="assets/qrplaylist.png" alt="QR Playlist" class="qr">
+  </div>
+
+  <footer>ด้วยรักและคิดถึงจาก ซันซัง 💫</footer>
+</div>
+
+
+<script>
+  function playSong() {
+    document.getElementById('birthdaySong').play();
+  }
+
+  function revealGift() {
+    document.getElementById('giftSection').style.display = 'block';
+  }
+</script>
+</body>
+</html>
