@@ -117,6 +117,31 @@
   function revealGift() {
     document.getElementById('giftSection').style.display = 'block';
   }
+  
+  const container = document.getElementById('fireworks');
+    container.style.position = 'fixed';
+    container.style.top = 0;
+    container.style.left = 0;
+    container.style.width = '100%';
+    container.style.height = '100%';
+    container.style.pointerEvents = 'none';
+
+    const fireworks = new Fireworks.default(container, { 
+      autoresize: true,
+      opacity: 0.5,
+      acceleration: 1.05,
+      friction: 0.97,
+      gravity: 1.5,
+      particles: 100,
+      trace: 3,
+      traceSpeed: 10,
+      explosion: 5
+    });
+
+    fireworks.start();
+
+    // ให้พลุเล่นประมาณ 5 วินาที แล้วหยุด
+    setTimeout(() => fireworks.stop(), 5000);
 </script>
 </body>
 </html>
