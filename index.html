@@ -83,7 +83,9 @@
   <h1>สุขสันต์วันเกิดมุ้จุ้ 🎂</h1>
   <p>ขอให้คุณมีความสุขที่สุดในโลกเลยน้า</p>
   
-  <audio id="birthdaySong" src="assets/birthday1.mp3" autoplay loop ></audio>
+  <audio id="introSong" src="assets/intro.mp3"></audio>
+<audio id="birthdaySong" src="assets/birthday1.mp3" loop></audio>
+
 
   <button class="btn" onclick="playSong()">เล่นเพลง 🎶</button>
   <button class="btn" onclick="revealGift()">เปิดของขวัญ 💌</button>
@@ -111,8 +113,16 @@
 
 <script>
   function playSong() {
-    document.getElementById('birthdaySong').play();
+    const intro = document.getElementById('introSong');
+    const main = document.getElementById('birthdaySong');
+
+    intro.play();
+
+    intro.addEventListener('ended', function () {
+      main.play();
+    });
   }
+
 
   function revealGift() {
     document.getElementById('giftSection').style.display = 'block';
